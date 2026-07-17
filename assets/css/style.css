@@ -16,6 +16,23 @@ body {
     background-size: contain;
     position: relative;
     height: 250px;
+    transition:.3s;
+}
+
+#center-image:hover{
+
+    transform:scale(1.04);
+}
+
+nav{
+    position: sticky;
+    top: 0;
+
+    background: #3b2416;
+    z-index: 1000;
+    width: 100%;
+    padding:15px 0;
+    box-shadow:0 3px 12px rgba(0,0,0,.35);
 }
 
 #nav-bar {
@@ -23,6 +40,10 @@ body {
     font-weight: 600;
     text-align: center;
     color: rgb(236, 186, 5);
+    display:flex;
+    justify-content:center;
+    gap:2rem;
+    flex-wrap:wrap;
     }
     
     #nav-bar li {
@@ -33,18 +54,42 @@ body {
     
 }
 
-    #nav-bar a {
-        text-decoration: none;
-        color:inherit;
-    }
+    nav a{
+    color:white;
+    text-decoration:none;
+
+    transition:
+        color .3s ease,
+        transform .3s ease,
+        text-shadow .3s ease;
+}
     
     #nav-bar a:hover {
-        border-bottom: 5px solid #e6bd04;
+        color:#E6BD04;
+        transform:translateY(-3px);
+        text-shadow:0 0 10px rgba(230,189,4,.7);
     }
     
-    .active {
-        border-bottom: 5px solid #e6bd04;
-        }
+   /* .button{
+
+    transition:.3s;
+
+}
+
+.button:hover{
+
+    background:#E6BD04;
+
+    color:#2f1b11;
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+        0 8px 20px rgba(0,0,0,.35);
+
+}
+        */
 
         #section2 {
             background-color: #e6bd04;
