@@ -496,6 +496,8 @@ box-shadow:
 
     border:3px solid #b39122;
 
+    text-align: center;
+
 }
 
     
@@ -558,7 +560,7 @@ text-shadow: 3px 3px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
 .character-sheets {
     height: 900px;
-    width: 800px
+    width: 900px
 }
 
 
