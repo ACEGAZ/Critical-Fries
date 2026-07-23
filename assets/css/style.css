@@ -28,8 +28,9 @@ body {
     background-position: center center;
     background-size: contain;
     position: relative;
+    cursor: pointer;
+    transition: all .4s ease;
     height: 250px;
-    transition:.3s;
      width: 100%;
     max-width: 700px;
 
@@ -43,6 +44,87 @@ body {
 #center-image:hover{
 
     transform:scale(1.04);
+     filter:
+        drop-shadow(0 0 10px rgba(255,215,0,.4))
+        drop-shadow(0 0 25px rgba(255,170,40,.6))
+        drop-shadow(0 0 45px rgba(255,215,0,.3));
+}
+
+#center-image:hover .steam span{
+
+    animation-duration:2.5s;
+
+    opacity:.9;
+
+}
+
+.hero:has(#center-image:hover) .lantern{
+
+    animation-play-state: paused;
+
+    transform: scale(1.08);
+     filter: brightness(1.4);
+
+
+    filter:
+        drop-shadow(0 0 12px #FFD56A)
+        drop-shadow(0 0 30px orange)
+        drop-shadow(0 0 45px gold)
+        drop-shadow(0 0 60px gold);
+       
+
+}
+
+.hero:has(#center-image:hover) .dice{
+
+    filter:
+
+        drop-shadow(0 0 10px gold)
+
+        drop-shadow(0 0 20px orange);
+
+}
+
+.hero:has(#center-image:hover) .embers span{
+
+    animation-duration:5s;
+
+    opacity:1;
+
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(255,180,50,.08),
+
+            transparent 70%
+
+        );
+
+    pointer-events:none;
+
+    opacity:0;
+
+    transition:.5s;
+
+}
+
+.hero:has(#center-image:hover)::before{
+
+    opacity:1;
+
 }
 
 .steam{
@@ -225,12 +307,35 @@ body {
 }
 
 .hero h1 {
+    left: 35.5%;
     position: relative;
     z-index: 20;
     color: #f9ad69;
+    width: 30%;
      text-shadow: 3px 3px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
-    
+
+.hero h1:hover{
+
+    cursor: pointer;
+
+    transform:scale(1.04);
+     filter:
+        drop-shadow(0 0 10px rgba(255,215,0,.4))
+        drop-shadow(0 0 25px rgba(255,170,40,.6))
+        drop-shadow(0 0 45px rgba(255,215,0,.3));
+}
+
+.hero:has(#center-image:hover) h1{
+
+    filter:
+
+        drop-shadow(0 0 10px gold)
+
+        drop-shadow(0 0 20px orange);
+
+
+}
     
 
 .hero-beam{
@@ -293,7 +398,6 @@ body {
     top:165px;
 
     left:4.9%;
-
 }
 
 .lantern-right{
@@ -320,14 +424,111 @@ body {
         drop-shadow(0 0 18px rgba(255,170,40,.25));
          animation:
 
-        lanternGlow 3s ease-in-out infinite,
+        lanternFlicker 3s ease-in-out infinite,
 
         sway 5s ease-in-out infinite;
 
 
 }
 
-@keyframes lanternGlow{
+
+.lantern-light{
+
+    animation:
+
+        lanternPulse
+
+        3.5s
+
+        ease-in-out
+
+        infinite;
+
+    position:absolute;
+
+    width:300px;
+    height:500px;
+
+    pointer-events:none;
+
+    z-index:4;
+
+    opacity:.18;
+
+    filter:blur(40px);
+
+     background:
+
+        radial-gradient(
+
+            ellipse at top,
+
+            rgba(255,220,120,.9),
+
+            rgba(255,180,40,.25) 40%,
+
+            transparent 75%
+
+        );
+
+}
+
+.light-left,
+.light-right{
+    top: 200px;
+    width: 300px;
+    height: 500px;
+}
+
+.light-left{
+    left: calc(4.9% - 110px);
+}
+
+.light-right{
+    right: calc(4.9% - 110px);
+}
+
+.lantern:hover{
+
+    filter:
+
+        drop-shadow(0 0 12px #ffd966)
+
+        drop-shadow(0 0 30px orange)
+
+        drop-shadow(0 0 45px gold);
+
+}
+
+@keyframes lanternPulse{
+
+    0%{
+
+        opacity:.14;
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        opacity:.22;
+
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        opacity:.14;
+
+        transform:scale(1);
+
+    }
+
+}
+
+@keyframes lanternFlicker{
 
     0%{
 
@@ -801,6 +1002,134 @@ text-shadow: 3px 3px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
         transform:translateY(-3px);
         text-shadow:0 0 10px rgba(230,189,4,.7);
     }
+
+.menu-board h1 {
+    text-align: center;
+    font-size: 40px;
+    color: #f9ad69;
+    text-decoration:none;
+
+    transition:
+        color .3s ease,
+        transform .3s ease,
+        text-shadow .3s ease;
+    
+     text-shadow: 3px 3px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
+}
+
+.menu-card{
+
+    position:relative;
+
+    background:url("../images/textures/parchment.jpg");
+
+     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    width: 50%;
+    text-align: center;
+    top: 30px;
+    left: 30px;
+    color:#2c1d12;
+    
+
+    border:3px solid #9b6b2d;
+
+    border-radius:18px;
+
+    transition:.35s;
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,.25),
+        0 0 0 2px rgba(120,80,30,.25);
+
+}
+
+.menu-card ul{
+    padding-left: 0;
+    
+}
+
+.menu-card li {
+    list-style-type: none;
+}
+
+.menu-card::before{
+
+    border:2px solid rgba(255,215,100,.25);
+
+    border-radius:16px;
+
+    pointer-events:none;
+
+     content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(255,245,220,.18);
+
+    pointer-events: none;
+
+}
+
+.menu-card:hover{
+
+     transform:
+
+        translateY(-10px)
+
+        scale(1.03);
+
+    box-shadow:
+        0 0 18px rgba(255,200,60,.35),
+        0 0 35px rgba(255,170,40,.2),
+        0 15px 35px rgba(0,0,0,.35);
+
+
+}
+
+.menu-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-150%;
+
+    left:-40%;
+
+    width:50%;
+
+    height:300%;
+
+    background:
+
+        linear-gradient(
+
+            transparent,
+
+            rgba(255,255,255,.25),
+
+            transparent
+
+        );
+
+    transform:rotate(25deg);
+
+    transition:.8s;
+
+}
+
+.menu-card:hover::after{
+
+    left:130%;
+
+}
 
 .character-sheets {
     height: 900px;
