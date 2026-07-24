@@ -971,6 +971,9 @@ box-shadow:
      footer {
         text-align: center;
        margin-bottom: 50px;
+       clear: both;
+        display: block;
+        padding-top: 5%;
    }
 
    .social-networks {
@@ -1003,24 +1006,18 @@ text-shadow: 3px 3px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
         text-shadow:0 0 10px rgba(230,189,4,.7);
     }
 
-.menu-board h1 {
-    text-align: center;
-    font-size: 40px;
-    color: #f9ad69;
-    text-decoration:none;
-
-    transition:
-        color .3s ease,
-        transform .3s ease,
-        text-shadow .3s ease;
-    
-     text-shadow: 3px 3px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+.menu-board img {
+   width: 50%;
+   display: flex;
+   margin: auto;
     
 }
 
 .menu-card{
-
+    float: left;
+    clear: none;
     position:relative;
+    
 
     background:url("../images/textures/parchment.jpg");
 
@@ -1030,10 +1027,10 @@ text-shadow: 3px 3px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     position: relative;
     overflow: hidden;
     z-index: 2;
-    width: 50%;
+    width: 45%;
+    left: 3%;
     text-align: center;
     top: 30px;
-    left: 30px;
     color:#2c1d12;
     
 
@@ -1129,6 +1126,11 @@ text-shadow: 3px 3px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
     left:130%;
 
+}
+
+.legendary {
+    margin-left: 1%;
+    margin-top: 1%;
 }
 
 .character-sheets {
